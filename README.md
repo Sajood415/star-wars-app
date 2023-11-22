@@ -12,7 +12,11 @@ v18.8.0
 8.18.0
 ```
 
-To run this project locally, you'll have to install the node_modules.
+To run this project locally, you'll have to install the node_modules. You can do that by using
+
+```bash
+npm i
+```
 
 On project root directory, Open cmd and run
 ```javascript
