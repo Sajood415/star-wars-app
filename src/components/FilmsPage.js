@@ -27,16 +27,14 @@ const FilmsPage = () => {
 
   return (
     <Box bg="blue.500" h="100vh" color="white">
-      {category && (
-        <Breadcrumb spacing="8px" separator="-" p={4} bg="gray.700">
-          <BreadcrumbItem>
-            <Link to="/">Home</Link>
-          </BreadcrumbItem>
-          <BreadcrumbItem>
-            <BreadcrumbLink>{category}</BreadcrumbLink>
-          </BreadcrumbItem>
-        </Breadcrumb>
-      )}
+      <Breadcrumb spacing="8px" separator="-" p={4} bg="gray.700">
+        <BreadcrumbItem>
+          <Link to="/">Home</Link>
+        </BreadcrumbItem>
+        <BreadcrumbItem>
+          <BreadcrumbLink>films</BreadcrumbLink>
+        </BreadcrumbItem>
+      </Breadcrumb>
       <Flex direction="column" align="center" justify="center" h="100%">
         {loading ? (
           <Center>
@@ -45,7 +43,7 @@ const FilmsPage = () => {
         ) : subItems.length === 0 ? (
           <Text>No films data available</Text>
         ) : (
-          <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
+          <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={4}>
             {subItems.map((item) => (
               <Box
                 key={item.episode_id}
@@ -58,11 +56,12 @@ const FilmsPage = () => {
                 boxShadow="xl"
                 _hover={{ bg: 'gray.700', transform: 'scale(1.05)', transition: 'transform 0.3s' }}
               >
-                <Text fontSize="xl" fontWeight="bold" mb={2}>
+                <Text fontSize="2xl" fontWeight="bold" mb={2} color="yellow.300">
                   {item.title}
                 </Text>
-                <Text>
-                  <strong>Director:</strong> {item.director}
+                <Text color="gray.300">
+                  <strong>Director:</strong> {item.director}<br />
+                  <strong>Producer:</strong> {item.producer}
                 </Text>
               </Box>
             ))}

@@ -6,9 +6,9 @@ import { setCategory } from '../redux/action';
 import { Link } from 'react-router-dom';
 
 const categories = [
-  { name: 'Films', icon: <GiFilmProjector size={32} />, path: 'films' },
-  { name: 'People', icon: <GiPerson size={32} />, path: 'people' },
-  { name: 'Planets', icon: <GiEarthAmerica size={32} />, path: 'planets' },
+  { name: 'Films', icon: <GiFilmProjector size={38} />, path: 'films' },
+  { name: 'People', icon: <GiPerson size={38} />, path: 'people' },
+  { name: 'Planets', icon: <GiEarthAmerica size={38} />, path: 'planets' },
 ];
 
 const HomePage = () => {
