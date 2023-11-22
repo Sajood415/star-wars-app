@@ -31,6 +31,7 @@ const HomePage = () => {
                 overflow="hidden"
                 textAlign="center"
                 cursor="pointer"
+                _hover={{ transform: 'scale(1.1)', transition: 'transform 0.3s', boxShadow: 'lg' }}
               >
                 {category.icon}
                 <Text mt={4} fontSize="lg">{category.name}</Text>

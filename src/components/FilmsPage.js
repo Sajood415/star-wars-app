@@ -56,6 +56,7 @@ const FilmsPage = () => {
                 overflow="hidden"
                 bg="gray.800"
                 boxShadow="xl"
+                _hover={{ bg: 'gray.700', transform: 'scale(1.05)', transition: 'transform 0.3s' }}
               >
                 <Text fontSize="xl" fontWeight="bold" mb={2}>
                   {item.title}
