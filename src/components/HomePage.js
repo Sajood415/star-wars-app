@@ -1,14 +1,14 @@
 import React from 'react';
-import { Box, Text } from '@chakra-ui/react';
+import { Box, Text, Flex, Heading, SimpleGrid } from '@chakra-ui/react';
 import { GiFilmProjector, GiPerson, GiEarthAmerica } from 'react-icons/gi';
 import { useDispatch } from 'react-redux';
 import { setCategory } from '../redux/action';
 import { Link } from 'react-router-dom';
 
 const categories = [
-  { name: 'Films', icon: <GiFilmProjector />, path: 'films' },
-  { name: 'People', icon: <GiPerson />, path: 'people' },
-  { name: 'Planets', icon: <GiEarthAmerica />, path: 'planets' },
+  { name: 'Films', icon: <GiFilmProjector size={32} />, path: 'films' },
+  { name: 'People', icon: <GiPerson size={32} />, path: 'people' },
+  { name: 'Planets', icon: <GiEarthAmerica size={32} />, path: 'planets' },
 ];
 
 const HomePage = () => {
@@ -19,22 +19,31 @@ const HomePage = () => {
   };
 
   return (
-    <Box>
-      {categories.map((category) => (
-        <Link key={category.name} to={`/${category.path}`} onClick={() => handleCategoryClick(category.path)}>
-          <Box
-            p={4}
-            borderWidth="1px"
-            borderRadius="lg"
-            overflow="hidden"
-            textAlign="center"
-            cursor="pointer"
-          >
-            {category.icon}
-            <Text mt={2}>{category.name}</Text>
-          </Box>
-        </Link>
-      ))}
+    <Box bg="blue.500" h="100vh" color="white">
+      <Box p={4} bg="gray.800">
+        <Heading as="h1" fontSize="2xl" textAlign="center">
+          Star Wars App
+        </Heading>
+      </Box>
+      <Flex justify="center" align="center" h="70%">
+        <SimpleGrid columns={3} spacing={8} w="80%">
+          {categories.map((category) => (
+            <Link key={category.name} to={`/${category.path}`} onClick={() => handleCategoryClick(category.path)}>
+              <Box
+                p={4}
+                borderWidth="1px"
+                borderRadius="lg"
+                overflow="hidden"
+                textAlign="center"
+                cursor="pointer"
+              >
+                {category.icon}
+                <Text mt={4} fontSize="lg">{category.name}</Text>
+              </Box>
+            </Link>
+          ))}
+        </SimpleGrid>
+      </Flex>
     </Box>
   );
 };
